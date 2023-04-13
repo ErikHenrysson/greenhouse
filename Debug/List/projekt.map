@@ -1,0 +1,548 @@
+###############################################################################
+#
+# IAR ELF Linker V9.10.1.308/W64 for ARM                  12/Jan/2022  13:04:46
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =  C:\Users\erik9\Desktop\dts\projekt\Debug\Exe\projekt.out
+#    Map file     =  C:\Users\erik9\Desktop\dts\projekt\Debug\List\projekt.map
+#    Command line =
+#        -f C:\Users\erik9\Desktop\dts\projekt\Debug\Exe\projekt.out.rsp
+#        (C:\Users\erik9\Desktop\dts\projekt\Debug\Obj\cstartup.o
+#        C:\Users\erik9\Desktop\dts\projekt\Debug\Obj\dateTime.o
+#        C:\Users\erik9\Desktop\dts\projekt\Debug\Obj\exceptions.o
+#        C:\Users\erik9\Desktop\dts\projekt\Debug\Obj\getKey.o
+#        C:\Users\erik9\Desktop\dts\projekt\Debug\Obj\led.o
+#        C:\Users\erik9\Desktop\dts\projekt\Debug\Obj\LinkedList.o
+#        C:\Users\erik9\Desktop\dts\projekt\Debug\Obj\main.o
+#        C:\Users\erik9\Desktop\dts\projekt\Debug\Obj\printTemp.o
+#        C:\Users\erik9\Desktop\dts\projekt\Debug\Obj\readLight.o
+#        C:\Users\erik9\Desktop\dts\projekt\Debug\Obj\readTemp.o
+#        C:\Users\erik9\Desktop\dts\projekt\Debug\Obj\servo.o
+#        C:\Users\erik9\Desktop\dts\projekt\Debug\Obj\startup_sam3x.o
+#        C:\Users\erik9\Desktop\dts\projekt\Debug\Obj\system_sam3x.o
+#        C:\Users\erik9\Desktop\dts\projekt\Debug\Obj\Write2Display.o
+#        --no_out_extension -o
+#        C:\Users\erik9\Desktop\dts\projekt\Debug\Exe\projekt.out --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
+#        C:\Users\erik9\Desktop\dts\projekt\Debug\List\projekt.map --config
+#        "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.0\arm\config\linker\Microchip\sam3x8\sram.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__Heap_Handler  = Basic
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x2007'0000 { ro section .intvec };
+"P1":  place in [from 0x2007'0000 to 0x2008'7fff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2007'0000 to 0x2008'7fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy with packing = copy, complex ranges { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0xf4
+  .intvec                     0x2007'0000    0xf4  <Block>
+    .intvec          const    0x2007'0000    0xf4  startup_sam3x.o [1]
+                            - 0x2007'00f4    0xf4
+
+"P1-P2", part 1 of 3:                      0x48c4
+  .text              ro code  0x2007'00f4   0xf16  xprintffull_nomb.o [2]
+  .text              ro code  0x2007'100a    0x2a  copy_init3.o [4]
+  .text              ro code  0x2007'1034    0x16  strchr.o [4]
+  .text              ro code  0x2007'104a     0x2  exceptions.o [1]
+  .text              ro code  0x2007'104c    0x40  xfail_s.o [2]
+  .text              ro code  0x2007'108c    0x36  strlen.o [4]
+  .text              ro code  0x2007'10c4    0x58  memchr.o [4]
+  .text              ro code  0x2007'111c    0xa6  ABImemcpy.o [4]
+  .text              ro code  0x2007'11c4    0x70  frexp.o [3]
+  .text              ro code  0x2007'1234    0x34  DblCmpLe.o [3]
+  .text              ro code  0x2007'1268    0x34  DblCmpGe.o [3]
+  .text              ro code  0x2007'129c   0x13a  ldexp.o [3]
+  .text              ro code  0x2007'13d8    0x36  DblToS32.o [3]
+  .text              ro code  0x2007'1410    0x22  S32ToDbl.o [3]
+  .text              ro code  0x2007'1434   0x25e  DblAddSub.o [3]
+  .text              ro code  0x2007'1694   0x246  DblDiv.o [3]
+  .text              ro code  0x2007'18dc    0x22  DblToU32.o [3]
+  .text              ro code  0x2007'1900    0x1c  U32ToDbl.o [3]
+  .text              ro code  0x2007'191c   0x1aa  DblMul.o [3]
+  .text              ro code  0x2007'1ac8   0x230  I64DivMod.o [4]
+  .text              ro code  0x2007'1cf8     0x6  abort.o [2]
+  .text              ro code  0x2007'1d00     0x2  I64DivZer.o [4]
+  .text              ro code  0x2007'1d04    0x14  exit.o [5]
+  .text              ro code  0x2007'1d18    0x7c  iarttio.o [5]
+  .text              ro code  0x2007'1d94     0x8  XShttio.o [2]
+  .text              ro code  0x2007'1d9c   0xca8  readTemp.o [1]
+  .text              ro code  0x2007'2a44   0x650  Write2Display.o [1]
+  .text              ro code  0x2007'3094    0xc2  LinkedList.o [1]
+  .text              ro code  0x2007'3158   0x560  getKey.o [1]
+  .text              ro code  0x2007'36b8   0x13c  heap0.o [2]
+  .text              ro code  0x2007'37f4    0x28  printf.o [2]
+  .text              ro code  0x2007'381c     0x4  heaptramp0.o [2]
+  .text              ro code  0x2007'3820   0x72a  dateTime.o [1]
+  .text              ro code  0x2007'3f4c    0x2c  xgetmemchunk.o [2]
+  .text              ro code  0x2007'3f78   0x494  main.o [1]
+  .text              ro code  0x2007'440c    0xb8  system_sam3x.o [1]
+  .text              ro code  0x2007'44c4    0x44  led.o [1]
+  .text              ro code  0x2007'4508   0x158  readLight.o [1]
+  .text              ro code  0x2007'4660   0x140  servo.o [1]
+  .text              ro code  0x2007'47a0    0x38  zero_init3.o [4]
+  .text              ro code  0x2007'47d8    0x34  startup_sam3x.o [1]
+  .text              ro code  0x2007'480c     0xc  cstartup.o [1]
+  .text              ro code  0x2007'4818    0x1e  cmain.o [4]
+  .text              ro code  0x2007'4838    0x28  data_init.o [4]
+  .text              ro code  0x2007'4860     0x4  exit.o [2]
+  .text              ro code  0x2007'4864     0xa  cexit.o [4]
+  .text              ro code  0x2007'486e    0x22  iarwrite.o [5]
+  .iar.init_table    const    0x2007'4890    0x24  - Linker created -
+  .text              ro code  0x2007'48b4    0x20  putchar.o [2]
+  .text              ro code  0x2007'48d4    0x10  write.o [5]
+  .text              ro code  0x2007'48e4    0x1e  dwrite.o [5]
+  .text              ro code  0x2007'4902    0x20  iarwstd.o [5]
+  .text              ro code  0x2007'4922    0x16  xprout.o [2]
+  .rodata            const    0x2007'4938    0x10  LinkedList.o [1]
+  .rodata            const    0x2007'4948    0x10  main.o [1]
+  .rodata            const    0x2007'4958     0x0  zero_init3.o [4]
+  .rodata            const    0x2007'4958     0x0  copy_init3.o [4]
+  P1-P2 s0                    0x2007'4958    0x30  <Init block>
+    .data            inited   0x2007'4958     0x8  XShttio.o [2]
+    .data            inited   0x2007'4960     0x4  dateTime.o [1]
+    .data            inited   0x2007'4964     0x4  dateTime.o [1]
+    .data            inited   0x2007'4968     0x4  dateTime.o [1]
+    .data            inited   0x2007'496c     0x4  dateTime.o [1]
+    .data            inited   0x2007'4970     0x4  dateTime.o [1]
+    .data            inited   0x2007'4974     0x4  dateTime.o [1]
+    .data            inited   0x2007'4978     0x4  readTemp.o [1]
+    .data            inited   0x2007'497c     0x4  readTemp.o [1]
+    .data            inited   0x2007'4980     0x4  readTemp.o [1]
+    .data            inited   0x2007'4984     0x4  system_sam3x.o [1]
+  Initializer bytes  const    0x2007'4988    0x30  <for P1-P2 s0>
+                            - 0x2007'49b8  0x48c4
+
+"P1-P2", part 2 of 3:                       0x10c
+  .bss               zero     0x2007'49b8    0xa8  readTemp.o [1]
+  .bss               zero     0x2007'4a60     0x8  heap0.o [2]
+  .bss               zero     0x2007'4a68     0x4  dateTime.o [1]
+  .bss               zero     0x2007'4a6c     0x4  dateTime.o [1]
+  .bss               zero     0x2007'4a70     0x4  dateTime.o [1]
+  .bss               zero     0x2007'4a74     0x4  dateTime.o [1]
+  .bss               zero     0x2007'4a78     0x4  dateTime.o [1]
+  .bss               zero     0x2007'4a7c     0x4  dateTime.o [1]
+  .bss               zero     0x2007'4a80     0x4  getKey.o [1]
+  .bss               zero     0x2007'4a84     0x4  main.o [1]
+  .bss               zero     0x2007'4a88     0x4  main.o [1]
+  .bss               zero     0x2007'4a8c     0x4  readLight.o [1]
+  .bss               zero     0x2007'4a90     0x4  readLight.o [1]
+  .bss               zero     0x2007'4a94     0x4  readLight.o [1]
+  .bss               zero     0x2007'4a98     0x4  readTemp.o [1]
+  .bss               zero     0x2007'4a9c     0x4  readTemp.o [1]
+  .bss               zero     0x2007'4aa0     0x4  readTemp.o [1]
+  .bss               zero     0x2007'4aa4     0x4  readTemp.o [1]
+  .bss               zero     0x2007'4aa8     0x4  readTemp.o [1]
+  .bss               zero     0x2007'4aac     0x4  readTemp.o [1]
+  .bss               zero     0x2007'4ab0     0x4  readTemp.o [1]
+  .bss               zero     0x2007'4ab4     0x4  readTemp.o [1]
+  .bss               zero     0x2007'4ab8     0x4  readTemp.o [1]
+  .bss               zero     0x2007'4abc     0x4  xgetmemchunk.o [2]
+  .bss               zero     0x2007'4ac0     0x4  xfail_s.o [2]
+                            - 0x2007'4ac4   0x10c
+
+"P1-P2", part 3 of 3:                      0x3000
+  CSTACK                      0x2007'4ac8  0x1000  <Block>
+    CSTACK           uninit   0x2007'4ac8  0x1000  <Block tail>
+  HEAP                        0x2007'5ac8  0x2000  <Block>
+    HEAP             uninit   0x2007'5ac8  0x2000  <Block tail>
+                            - 0x2007'7ac8  0x3000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+  0x2007'4ac4  0x2007'4ac7       0x4
+  0x2007'7ac8  0x2008'7fff  0x1'0538
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x10c:
+          0x2007'49b8  0x10c
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x30:
+          0x2007'4988   0x30
+    1 destination range, total size 0x30:
+          0x2007'4958   0x30
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  ro data  rw data
+    ------              -------  -------  -------
+command line/config:
+    ---------------------------------------------
+    Total:
+
+C:\Users\erik9\Desktop\dts\projekt\Debug\Obj: [1]
+    LinkedList.o            194       16
+    Write2Display.o       1'616
+    cstartup.o               12
+    dateTime.o            1'834       24       48
+    exceptions.o              2
+    getKey.o              1'376                 4
+    led.o                    68
+    main.o                1'172       16        8
+    readLight.o             344                12
+    readTemp.o            3'240       12      216
+    servo.o                 320
+    startup_sam3x.o          52      244
+    system_sam3x.o          184        4        4
+    ---------------------------------------------
+    Total:               10'414      316      292
+
+dl7M_tln.a: [2]
+    XShttio.o                 8        8        8
+    abort.o                   6
+    exit.o                    4
+    heap0.o                 316                 8
+    heaptramp0.o              4
+    printf.o                 40
+    putchar.o                32
+    xfail_s.o                64                 4
+    xgetmemchunk.o           44                 4
+    xprintffull_nomb.o    3'862
+    xprout.o                 22
+    ---------------------------------------------
+    Total:                4'402        8       24
+
+m7M_tl.a: [3]
+    DblAddSub.o             606
+    DblCmpGe.o               52
+    DblCmpLe.o               52
+    DblDiv.o                582
+    DblMul.o                426
+    DblToS32.o               54
+    DblToU32.o               34
+    S32ToDbl.o               34
+    U32ToDbl.o               28
+    frexp.o                 112
+    ldexp.o                 314
+    ---------------------------------------------
+    Total:                2'294
+
+rt7M_tl.a: [4]
+    ABImemcpy.o             166
+    I64DivMod.o             560
+    I64DivZer.o               2
+    cexit.o                  10
+    cmain.o                  30
+    copy_init3.o             42
+    data_init.o              40
+    memchr.o                 88
+    strchr.o                 22
+    strlen.o                 54
+    zero_init3.o             56
+    ---------------------------------------------
+    Total:                1'070
+
+shb_l.a: [5]
+    dwrite.o                 30
+    exit.o                   20
+    iarttio.o               124
+    iarwrite.o               34
+    iarwstd.o                32
+    write.o                  16
+    ---------------------------------------------
+    Total:                  256
+
+    Gaps                     28
+    Linker created                    36   12'288
+-------------------------------------------------
+    Grand Total:         18'464      360   12'604
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base   0x2007'4890          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x2007'48b4          --   Gb  - Linker created -
+.intvec$$Base           0x2007'0000          --   Gb  - Linker created -
+.intvec$$Limit          0x2007'00f4          --   Gb  - Linker created -
+?main                   0x2007'4819         Code  Gb  cmain.o [4]
+ADC_Handler             0x2007'45c5   0x44  Code  Gb  readLight.o [1]
+Aldata                  0x2007'4a60    0x8  Data  Lc  heap0.o [2]
+BusFault_Handler        0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+CAN0_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+CAN1_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+CSTACK$$Base            0x2007'4ac8          --   Gb  - Linker created -
+CSTACK$$Limit           0x2007'5ac8          --   Gb  - Linker created -
+DACC_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+DMAC_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+DebugMon_Handler        0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+Delay                   0x2007'2a45    0xe  Code  Gb  Write2Display.o [1]
+Dummy_Handler           0x2007'104b    0x2  Code  Gb  exceptions.o [1]
+EFC0_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+EFC1_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+HEAP$$Base              0x2007'5ac8          --   Gb  - Linker created -
+HEAP$$Limit             0x2007'7ac8          --   Gb  - Linker created -
+HSMCI_Handler           0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+HardFault_Handler       0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+InitServo               0x2007'4661   0x52  Code  Gb  servo.o [1]
+Init_Display            0x2007'2e81   0x6a  Code  Gb  Write2Display.o [1]
+MemManage_Handler       0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+NMI_Handler             0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+NVIC_ClearPendingIRQ    0x2007'451d   0x14  Code  Lc  readLight.o [1]
+NVIC_ClearPendingIRQ    0x2007'1db3   0x16  Code  Lc  readTemp.o [1]
+NVIC_EnableIRQ          0x2007'4509   0x14  Code  Lc  readLight.o [1]
+NVIC_EnableIRQ          0x2007'1d9d   0x16  Code  Lc  readTemp.o [1]
+NVIC_SetPriority        0x2007'4531   0x24  Code  Lc  readLight.o [1]
+NVIC_SetPriority        0x2007'1dc9   0x28  Code  Lc  readTemp.o [1]
+PIOA_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+PIOB_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+PIOC_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+PIOD_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+PMC_Handler             0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+PWM_Handler             0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+PendSV_Handler          0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+PrintNum                0x2007'2d6f   0xaa  Code  Gb  Write2Display.o [1]
+RSTC_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+RTC_Handler             0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+RTT_Handler             0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+Read_Status_Display     0x2007'2ca1   0x66  Code  Gb  Write2Display.o [1]
+Region$$Table$$Base     0x2007'4890          --   Gb  - Linker created -
+Region$$Table$$Limit    0x2007'48b4          --   Gb  - Linker created -
+Reset_Handler           0x2007'4805    0x8  Code  Gb  startup_sam3x.o [1]
+SPI0_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+SSC_Handler             0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+SUPC_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+SVC_Handler             0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+SetDBInput              0x2007'2bff   0x36  Code  Gb  Write2Display.o [1]
+SetDBOutput             0x2007'2c35   0x36  Code  Gb  Write2Display.o [1]
+SysTick_Config          0x2007'1df1   0x36  Code  Lc  readTemp.o [1]
+SysTick_Handler         0x2007'406d   0xba  Code  Gb  main.o [1]
+SystemCoreClock         0x2007'4984    0x4  Data  Gb  system_sam3x.o [1]
+SystemInit              0x2007'440d   0x86  Code  Gb  system_sam3x.o [1]
+TC0_Handler             0x2007'1e27   0x1c  Code  Gb  readTemp.o [1]
+TC1_Handler             0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+TC2_Handler             0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+TC3_Handler             0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+TC4_Handler             0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+TC5_Handler             0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+TCFLAG                  0x2007'4aa0    0x4  Data  Gb  readTemp.o [1]
+TRNG_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+TWI0_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+TWI1_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+UART_Handler            0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+UOTGHS_Handler          0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+USART0_Handler          0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+USART1_Handler          0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+USART2_Handler          0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+UsageFault_Handler      0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+WDT_Handler             0x2007'104b    0x2  Code  Wk  exceptions.o [1]
+Write_Command_2_Display
+                        0x2007'2d07   0x68  Code  Gb  Write2Display.o [1]
+Write_Data_2_Display    0x2007'2e19   0x68  Code  Gb  Write2Display.o [1]
+_LitobFullNoMb          0x2007'0e11  0x10c  Code  Lc  xprintffull_nomb.o [2]
+_PrintfFullNoMb         0x2007'00f5  0xcec  Code  Gb  xprintffull_nomb.o [2]
+_Prout                  0x2007'4923   0x16  Code  Gb  xprout.o [2]
+_PutcharFullNoMb        0x2007'0f75   0x20  Code  Lc  xprintffull_nomb.o [2]
+_PutcharsFullNoMb       0x2007'0f95   0x2e  Code  Lc  xprintffull_nomb.o [2]
+__aeabi_cdcmple         0x2007'1235         Code  Gb  DblCmpLe.o [3]
+__aeabi_cdrcmple        0x2007'1269         Code  Gb  DblCmpGe.o [3]
+__aeabi_d2iz            0x2007'13d9         Code  Gb  DblToS32.o [3]
+__aeabi_d2uiz           0x2007'18dd         Code  Gb  DblToU32.o [3]
+__aeabi_dadd            0x2007'1435         Code  Gb  DblAddSub.o [3]
+__aeabi_ddiv            0x2007'1695         Code  Gb  DblDiv.o [3]
+__aeabi_dmul            0x2007'191d         Code  Gb  DblMul.o [3]
+__aeabi_dsub            0x2007'15b1         Code  Gb  DblAddSub.o [3]
+__aeabi_i2d             0x2007'1411         Code  Gb  S32ToDbl.o [3]
+__aeabi_ldiv0           0x2007'1d01         Code  Gb  I64DivZer.o [4]
+__aeabi_memcpy          0x2007'111d         Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy4         0x2007'113d         Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy8         0x2007'113d         Code  Gb  ABImemcpy.o [4]
+__aeabi_ui2d            0x2007'1901         Code  Gb  U32ToDbl.o [3]
+__aeabi_uldivmod        0x2007'1ac9         Code  Gb  I64DivMod.o [4]
+__basic_free            0x2007'3765   0x16  Code  Gb  heap0.o [2]
+__basic_free_intern     0x2007'377b   0x74  Code  Lc  heap0.o [2]
+__basic_malloc          0x2007'36b9   0x18  Code  Gb  heap0.o [2]
+__basic_malloc_intern   0x2007'36d1   0x94  Code  Lc  heap0.o [2]
+__cmain                 0x2007'4819         Code  Gb  cmain.o [4]
+__data_GetMemChunk      0x2007'3f4d   0x2c  Code  Gb  xgetmemchunk.o [2]
+__data_GetMemChunk::start
+                        0x2007'4abc    0x4  Data  Lc  xgetmemchunk.o [2]
+__dwrite                0x2007'48e5   0x1e  Code  Gb  dwrite.o [5]
+__exit                  0x2007'1d05   0x14  Code  Gb  exit.o [5]
+__iar_Fail_s            0x2007'104d   0x1c  Code  Gb  xfail_s.o [2]
+__iar_Memchr            0x2007'10c5         Code  Gb  memchr.o [4]
+__iar_Strchr            0x2007'1035         Code  Gb  strchr.o [4]
+__iar_close_ttio        0x2007'1d19   0x2c  Code  Gb  iarttio.o [5]
+__iar_copy_init3        0x2007'100b   0x2a  Code  Gb  copy_init3.o [4]
+__iar_data_init3        0x2007'4839   0x28  Code  Gb  data_init.o [4]
+__iar_frexp             0x2007'11d1         Code  Gb  frexp.o [3]
+__iar_frexp64           0x2007'11c5         Code  Gb  frexp.o [3]
+__iar_frexpl            0x2007'11d1         Code  Gb  frexp.o [3]
+__iar_get_ttio          0x2007'1d45   0x4c  Code  Gb  iarttio.o [5]
+__iar_ldexp64           0x2007'129d         Code  Gb  ldexp.o [3]
+__iar_lookup_ttioh      0x2007'1d95    0x8  Code  Gb  XShttio.o [2]
+__iar_program_start     0x2007'480d         Code  Gb  cstartup.o [1]
+__iar_scalbln64         0x2007'129d         Code  Gb  ldexp.o [3]
+__iar_scalbn64          0x2007'129d         Code  Gb  ldexp.o [3]
+__iar_sh_stdout         0x2007'4903   0x20  Code  Gb  iarwstd.o [5]
+__iar_sh_write          0x2007'486f   0x22  Code  Gb  iarwrite.o [5]
+__iar_ttio_handles      0x2007'4958    0x8  Data  Lc  XShttio.o [2]
+__iar_zero_init3        0x2007'47a1   0x38  Code  Gb  zero_init3.o [4]
+__low_level_init        0x2007'47d9   0x24  Code  Gb  startup_sam3x.o [1]
+__vector_table          0x2007'0000   0xf4  Data  Gb  startup_sam3x.o [1]
+__write                 0x2007'48d5   0x10  Code  Gb  write.o [5]
+_call_main              0x2007'4825         Code  Gb  cmain.o [4]
+_exit                   0x2007'4865         Code  Gb  cexit.o [4]
+abort                   0x2007'1cf9    0x6  Code  Gb  abort.o [2]
+activateSpeedMode       0x2007'31f3    0x8  Code  Gb  getKey.o [1]
+checkAlarm              0x2007'2641   0x30  Code  Gb  readTemp.o [1]
+clearDB                 0x2007'2c6b   0x36  Code  Gb  Write2Display.o [1]
+clearDisplay            0x2007'2a69   0x24  Code  Gb  Write2Display.o [1]
+configDisp              0x2007'2ab1  0x14e  Code  Gb  Write2Display.o [1]
+configKeyPad            0x2007'3303   0x7a  Code  Gb  getKey.o [1]
+configLed               0x2007'44c5   0x1a  Code  Gb  led.o [1]
+configLight             0x2007'4599   0x2c  Code  Gb  readLight.o [1]
+configMaxMinTemp        0x2007'2881   0x1c  Code  Gb  readTemp.o [1]
+configMaxTemp           0x2007'27b5   0xbe  Code  Gb  readTemp.o [1]
+configMinMaxAvgList     0x2007'1ef7   0xdc  Code  Gb  readTemp.o [1]
+configMinTemp           0x2007'26eb   0xca  Code  Gb  readTemp.o [1]
+configTemp              0x2007'1fd3   0x7c  Code  Gb  readTemp.o [1]
+createTempNode          0x2007'30c7   0x72  Code  Gb  LinkedList.o [1]
+day                     0x2007'496c    0x4  Data  Gb  dateTime.o [1]
+dayFLAG                 0x2007'4a70    0x4  Data  Gb  dateTime.o [1]
+daysPassed              0x2007'4ab8    0x4  Data  Gb  readTemp.o [1]
+deactivateSpeedMode     0x2007'31fb    0x8  Code  Gb  getKey.o [1]
+delay                   0x2007'4a98    0x4  Data  Gb  readTemp.o [1]
+exit                    0x2007'4861    0x4  Code  Gb  exit.o [2]
+first                   0x2007'4a84    0x4  Data  Gb  main.o [1]
+free                    0x2007'381d    0x4  Code  Gb  heaptramp0.o [2]
+freeList                0x2007'313d   0x1a  Code  Gb  LinkedList.o [1]
+frexp                   0x2007'11c5         Code  Gb  frexp.o [3]
+frexpl                  0x2007'11c5         Code  Gb  frexp.o [3]
+func                    0x2007'3203  0x100  Code  Gb  getKey.o [1]
+getDaysInMonth          0x2007'3eed   0x5e  Code  Gb  dateTime.o [1]
+getFunc                 0x2007'3159   0x9a  Code  Gb  getKey.o [1]
+getTemp                 0x2007'1e43   0x36  Code  Gb  readTemp.o [1]
+goDate                  0x2007'3acf   0x2e  Code  Gb  dateTime.o [1]
+goLight                 0x2007'4555   0x44  Code  Gb  readLight.o [1]
+goServo                 0x2007'475f   0x1a  Code  Gb  servo.o [1]
+goTemp                  0x2007'204f   0xb2  Code  Gb  readTemp.o [1]
+goTime                  0x2007'3bd7   0x1c  Code  Gb  dateTime.o [1]
+h                       0x2007'4968    0x4  Data  Gb  dateTime.o [1]
+hFLAG                   0x2007'4a6c    0x4  Data  Gb  dateTime.o [1]
+id                      0x2007'4980    0x4  Data  Gb  readTemp.o [1]
+insertLast              0x2007'30a3   0x24  Code  Gb  LinkedList.o [1]
+isEmpty                 0x2007'3095    0xe  Code  Gb  LinkedList.o [1]
+isIdle                  0x2007'4017   0x56  Code  Gb  main.o [1]
+ldexp                   0x2007'129d         Code  Gb  ldexp.o [3]
+ldexpl                  0x2007'129d         Code  Gb  ldexp.o [3]
+light1                  0x2007'4a8c    0x4  Data  Gb  readLight.o [1]
+light2                  0x2007'4a90    0x4  Data  Gb  readLight.o [1]
+lightFLAG               0x2007'4a94    0x4  Data  Gb  readLight.o [1]
+m                       0x2007'4964    0x4  Data  Gb  dateTime.o [1]
+mFLAG                   0x2007'4a68    0x4  Data  Gb  dateTime.o [1]
+main                    0x2007'3f79   0x9e  Code  Gb  main.o [1]
+maxFLAG                 0x2007'4ab0    0x4  Data  Gb  readTemp.o [1]
+maxTemp                 0x2007'4978    0x4  Data  Gb  readTemp.o [1]
+memchr                  0x2007'10c5         Code  Gb  memchr.o [4]
+minFLAG                 0x2007'4aac    0x4  Data  Gb  readTemp.o [1]
+minMaxAvgList           0x2007'49b8   0xa8  Data  Gb  readTemp.o [1]
+minTemp                 0x2007'497c    0x4  Data  Gb  readTemp.o [1]
+month                   0x2007'4970    0x4  Data  Gb  dateTime.o [1]
+monthFLAG               0x2007'4a74    0x4  Data  Gb  dateTime.o [1]
+printDate               0x2007'3afd   0xda  Code  Gb  dateTime.o [1]
+printDateTime           0x2007'3ecd   0x20  Code  Gb  dateTime.o [1]
+printFLAG               0x2007'4a7c    0x4  Data  Gb  dateTime.o [1]
+printLetter             0x2007'2f15  0x180  Code  Gb  Write2Display.o [1]
+printMenu               0x2007'33b5  0x304  Code  Gb  getKey.o [1]
+printMinMaxAvg          0x2007'22b9  0x388  Code  Gb  readTemp.o [1]
+printMinMaxFLAG         0x2007'4ab4    0x4  Data  Gb  readTemp.o [1]
+printMinMaxTemp         0x2007'289d   0xf8  Code  Gb  readTemp.o [1]
+printTime               0x2007'3d9f   0xf8  Code  Gb  dateTime.o [1]
+printWarning            0x2007'2671   0x7a  Code  Gb  readTemp.o [1]
+printf                  0x2007'37f5   0x28  Code  Gb  printf.o [2]
+putchar                 0x2007'48b5   0x20  Code  Gb  putchar.o [2]
+reset                   0x2007'4a9c    0x4  Data  Gb  readTemp.o [1]
+resetTemp               0x2007'1e79   0x32  Code  Gb  readTemp.o [1]
+s                       0x2007'4960    0x4  Data  Gb  dateTime.o [1]
+scalbln                 0x2007'129d         Code  Gb  ldexp.o [3]
+scalblnl                0x2007'129d         Code  Gb  ldexp.o [3]
+scalbn                  0x2007'129d         Code  Gb  ldexp.o [3]
+scalbnl                 0x2007'129d         Code  Gb  ldexp.o [3]
+scale                   0x2007'0f1d   0x46  Code  Lc  xprintffull_nomb.o [2]
+sec_hand                0x2007'4ac0    0x4  Data  Lc  xfail_s.o [2]
+setCursor               0x2007'2a53   0x16  Code  Gb  Write2Display.o [1]
+setCursorPointer        0x2007'2a8d   0x24  Code  Gb  Write2Display.o [1]
+setDate                 0x2007'3ab7   0x18  Code  Gb  dateTime.o [1]
+setDay                  0x2007'3821   0xe0  Code  Gb  dateTime.o [1]
+setH                    0x2007'3cd3   0xcc  Code  Gb  dateTime.o [1]
+setLed                  0x2007'44df   0x14  Code  Gb  led.o [1]
+setM                    0x2007'3c07   0xcc  Code  Gb  dateTime.o [1]
+setMinMaxTemp           0x2007'2873    0xe  Code  Gb  readTemp.o [1]
+setMonth                0x2007'3901   0xe0  Code  Gb  dateTime.o [1]
+setServo                0x2007'46b3   0xac  Code  Gb  servo.o [1]
+setTime                 0x2007'3bf3   0x14  Code  Gb  dateTime.o [1]
+setYear                 0x2007'39e1   0xd6  Code  Gb  dateTime.o [1]
+speedFLAG               0x2007'4a80    0x4  Data  Gb  getKey.o [1]
+startFLAG               0x2007'4aa4    0x4  Data  Gb  readTemp.o [1]
+startMeasurement        0x2007'4609   0x12  Code  Gb  readLight.o [1]
+startTemp               0x2007'1eab   0x4c  Code  Gb  readTemp.o [1]
+strchr                  0x2007'1035         Code  Gb  strchr.o [4]
+strlen                  0x2007'108d         Code  Gb  strlen.o [4]
+temp                    0x2007'4aa8    0x4  Data  Gb  readTemp.o [1]
+timeCounter             0x2007'4a88    0x4  Data  Gb  main.o [1]
+updateMinMaxAvgList     0x2007'2101  0x1b8  Code  Gb  readTemp.o [1]
+updateScreen            0x2007'41c5  0x1e8  Code  Gb  main.o [1]
+updateTime              0x2007'4127   0x9e  Code  Gb  main.o [1]
+year                    0x2007'4974    0x4  Data  Gb  dateTime.o [1]
+yearFLAG                0x2007'4a78    0x4  Data  Gb  dateTime.o [1]
+
+
+[1] = C:\Users\erik9\Desktop\dts\projekt\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tl.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  18'464 bytes of readonly  code memory
+     360 bytes of readonly  data memory
+  12'604 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

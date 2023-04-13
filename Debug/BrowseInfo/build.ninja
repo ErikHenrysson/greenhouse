@@ -1,0 +1,173 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+
+
+
+#Build steps
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\dateTime.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\erik9\Desktop\dts\projekt\dateTime.c -xcl_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\dateTime.xcl -macro_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\dateTime.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\erik9\Desktop\dts\projekt\dateTime.c -o C$:\Users\erik9\Desktop\dts\projekt\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\dateTime.tmp
+  rspfile_name = C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\dateTime.xcl.rsp
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\exceptions.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\erik9\Desktop\dts\projekt\exceptions.c -xcl_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\exceptions.xcl -macro_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\exceptions.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\erik9\Desktop\dts\projekt\exceptions.c -o C$:\Users\erik9\Desktop\dts\projekt\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\exceptions.tmp
+  rspfile_name = C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\exceptions.xcl.rsp
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\getKey.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\erik9\Desktop\dts\projekt\getKey.c -xcl_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\getKey.xcl -macro_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\getKey.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\erik9\Desktop\dts\projekt\getKey.c -o C$:\Users\erik9\Desktop\dts\projekt\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\getKey.tmp
+  rspfile_name = C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\getKey.xcl.rsp
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\led.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\erik9\Desktop\dts\projekt\led.c -xcl_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\led.xcl -macro_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\led.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\erik9\Desktop\dts\projekt\led.c -o C$:\Users\erik9\Desktop\dts\projekt\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\led.tmp
+  rspfile_name = C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\led.xcl.rsp
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\LinkedList.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\erik9\Desktop\dts\projekt\LinkedList.c -xcl_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\LinkedList.xcl -macro_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\LinkedList.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\erik9\Desktop\dts\projekt\LinkedList.c -o C$:\Users\erik9\Desktop\dts\projekt\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\LinkedList.tmp
+  rspfile_name = C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\LinkedList.xcl.rsp
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\erik9\Desktop\dts\projekt\main.c -xcl_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\main.xcl -macro_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\main.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\erik9\Desktop\dts\projekt\main.c -o C$:\Users\erik9\Desktop\dts\projekt\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\main.tmp
+  rspfile_name = C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\main.xcl.rsp
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\printTemp.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\erik9\Desktop\dts\projekt\printTemp.c -xcl_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\printTemp.xcl -macro_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\printTemp.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\erik9\Desktop\dts\projekt\printTemp.c -o C$:\Users\erik9\Desktop\dts\projekt\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\printTemp.tmp
+  rspfile_name = C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\printTemp.xcl.rsp
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readLight.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\erik9\Desktop\dts\projekt\readLight.c -xcl_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readLight.xcl -macro_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readLight.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\erik9\Desktop\dts\projekt\readLight.c -o C$:\Users\erik9\Desktop\dts\projekt\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readLight.tmp
+  rspfile_name = C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readLight.xcl.rsp
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readTemp.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\erik9\Desktop\dts\projekt\readTemp.c -xcl_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readTemp.xcl -macro_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readTemp.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\erik9\Desktop\dts\projekt\readTemp.c -o C$:\Users\erik9\Desktop\dts\projekt\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readTemp.tmp
+  rspfile_name = C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readTemp.xcl.rsp
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\servo.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\erik9\Desktop\dts\projekt\servo.c -xcl_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\servo.xcl -macro_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\servo.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\erik9\Desktop\dts\projekt\servo.c -o C$:\Users\erik9\Desktop\dts\projekt\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\servo.tmp
+  rspfile_name = C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\servo.xcl.rsp
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\startup_sam3x.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\erik9\Desktop\dts\projekt\startup_sam3x.c -xcl_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\startup_sam3x.xcl -macro_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\startup_sam3x.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\erik9\Desktop\dts\projekt\startup_sam3x.c -o C$:\Users\erik9\Desktop\dts\projekt\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\startup_sam3x.tmp
+  rspfile_name = C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\startup_sam3x.xcl.rsp
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\system_sam3x.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\erik9\Desktop\dts\projekt\system_sam3x.c -xcl_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\system_sam3x.xcl -macro_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\system_sam3x.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\erik9\Desktop\dts\projekt\system_sam3x.c -o C$:\Users\erik9\Desktop\dts\projekt\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\system_sam3x.tmp
+  rspfile_name = C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\system_sam3x.xcl.rsp
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\Write2Display.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\erik9\Desktop\dts\projekt\Write2Display.c -xcl_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\Write2Display.xcl -macro_file C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\Write2Display.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\erik9\Desktop\dts\projekt\Write2Display.c -o C$:\Users\erik9\Desktop\dts\projekt\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\Write2Display.tmp
+  rspfile_name = C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\Write2Display.xcl.rsp
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\dateTime.pbi : INDEXER C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\dateTime.xcl |  $
+C$:\Users\erik9\Desktop\dts\projekt\dateTime.c
+  flags = -out=C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\dateTime.pbi -f C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\dateTime.xcl
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\exceptions.pbi : INDEXER C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\exceptions.xcl |  $
+C$:\Users\erik9\Desktop\dts\projekt\exceptions.c
+  flags = -out=C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\exceptions.pbi -f C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\exceptions.xcl
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\getKey.pbi : INDEXER C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\getKey.xcl |  $
+C$:\Users\erik9\Desktop\dts\projekt\getKey.c
+  flags = -out=C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\getKey.pbi -f C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\getKey.xcl
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\led.pbi : INDEXER C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\led.xcl |  $
+C$:\Users\erik9\Desktop\dts\projekt\led.c
+  flags = -out=C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\led.pbi -f C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\led.xcl
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\LinkedList.pbi : INDEXER C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\LinkedList.xcl |  $
+C$:\Users\erik9\Desktop\dts\projekt\LinkedList.c
+  flags = -out=C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\LinkedList.pbi -f C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\LinkedList.xcl
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\main.pbi : INDEXER C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\main.xcl |  $
+C$:\Users\erik9\Desktop\dts\projekt\main.c
+  flags = -out=C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\main.pbi -f C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\main.xcl
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\printTemp.pbi : INDEXER C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\printTemp.xcl |  $
+C$:\Users\erik9\Desktop\dts\projekt\printTemp.c
+  flags = -out=C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\printTemp.pbi -f C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\printTemp.xcl
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readLight.pbi : INDEXER C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readLight.xcl |  $
+C$:\Users\erik9\Desktop\dts\projekt\readLight.c
+  flags = -out=C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readLight.pbi -f C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readLight.xcl
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readTemp.pbi : INDEXER C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readTemp.xcl |  $
+C$:\Users\erik9\Desktop\dts\projekt\readTemp.c
+  flags = -out=C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readTemp.pbi -f C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readTemp.xcl
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\servo.pbi : INDEXER C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\servo.xcl |  $
+C$:\Users\erik9\Desktop\dts\projekt\servo.c
+  flags = -out=C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\servo.pbi -f C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\servo.xcl
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\startup_sam3x.pbi : INDEXER C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\startup_sam3x.xcl |  $
+C$:\Users\erik9\Desktop\dts\projekt\startup_sam3x.c
+  flags = -out=C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\startup_sam3x.pbi -f C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\startup_sam3x.xcl
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\system_sam3x.pbi : INDEXER C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\system_sam3x.xcl |  $
+C$:\Users\erik9\Desktop\dts\projekt\system_sam3x.c
+  flags = -out=C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\system_sam3x.pbi -f C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\system_sam3x.xcl
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\Write2Display.pbi : INDEXER C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\Write2Display.xcl |  $
+C$:\Users\erik9\Desktop\dts\projekt\Write2Display.c
+  flags = -out=C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\Write2Display.pbi -f C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\Write2Display.xcl
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt.pbw : MAKEBROWSE C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt.pbd
+  flags = C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt.pbd -output C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt.pbw
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part0.pbi : PDBLINK C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\dateTime.pbi |  $
+C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\exceptions.pbi $
+C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\getKey.pbi $
+C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\led.pbi
+  flags = -M C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part0.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\dateTime.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\exceptions.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\getKey.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\led.pbi
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part1.pbi : PDBLINK C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\LinkedList.pbi |  $
+C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\main.pbi $
+C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\printTemp.pbi $
+C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readLight.pbi
+  flags = -M C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part1.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\LinkedList.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\main.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\printTemp.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readLight.pbi
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part2.pbi : PDBLINK C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readTemp.pbi |  $
+C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\servo.pbi $
+C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\startup_sam3x.pbi $
+C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\system_sam3x.pbi
+  flags = -M C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part2.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\readTemp.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\servo.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\startup_sam3x.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\system_sam3x.pbi
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part3.pbi : PDBLINK C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\Write2Display.pbi
+  flags = -M C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part3.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\Write2Display.pbi
+
+build C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt.pbd : PDBLINK C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part0.pbi |  $
+C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part1.pbi $
+C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part2.pbi $
+C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part3.pbi
+  flags = -M C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt.pbd C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part0.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part1.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part2.pbi C$:\Users\erik9\Desktop\dts\projekt\Debug\BrowseInfo\projekt_part3.pbi
+
